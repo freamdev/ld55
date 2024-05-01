@@ -15,14 +15,11 @@ public class AscendScript : MonoBehaviour
 
     private void Start()
     {
-        MenuOnly.enabled = false;
-        var bonus = PlayerPrefs.GetInt("Bonus");
+        var bonus = PlayerPrefs.GetInt(PlayerPrefConsts.BONUS);
         if(bonus == 1)
         {
             Normal.SetActive(false);
             Ascended.SetActive(true);
-            MenuOnly.enabled = true;
-            GameObject.FindObjectsOfType<TextMeshProUGUI>().ToList().ForEach(f => f.color = AscendedTextColor); 
         }
     }
 }

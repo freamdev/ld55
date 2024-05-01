@@ -152,6 +152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 14
+  Damage: 0
+  OnCollisionParticleSystem: {fileID: 4941860884064711605, guid: 0e8261dab90317f4385f3bd0a7d4218d,
+    type: 3}
 --- !u!1 &7195529684311418948
 GameObject:
   m_ObjectHideFlags: 0

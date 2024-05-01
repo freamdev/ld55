@@ -9,6 +9,7 @@ public class HealingAura : MonoBehaviour
     public float TickTimer;
     public float Range;
     public float Heal;
+    public GameObject AuraGfx;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class HealingAura : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(TickTimer);
+            Instantiate(AuraGfx, transform.position, Quaternion.identity);
             var enemies = GameObject.FindObjectsOfType<EnemyController>();
             foreach (var enemy in enemies)
             {

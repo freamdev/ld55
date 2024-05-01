@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Priority: 100
   Cooldown: 0.7
-  BasePower: 9
+  BasePower: 21
   IsMelee: 1
   projetile: {fileID: 0}
   projectileCount: 0

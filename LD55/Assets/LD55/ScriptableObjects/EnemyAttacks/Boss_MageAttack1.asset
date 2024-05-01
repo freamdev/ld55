@@ -16,6 +16,7 @@ MonoBehaviour:
   Cooldown: 2
   BasePower: 4
   IsMelee: 0
+  IsPredicting: 1
   projetile: {fileID: 4723287031352434352, guid: 9dd829eae4e9f144ca243bfd5d4d3ded,
     type: 3}
   projectileCount: 3

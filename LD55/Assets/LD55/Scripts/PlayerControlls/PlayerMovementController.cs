@@ -15,15 +15,32 @@ public class PlayerMovementController : MonoBehaviour
     public bool BlinkEnabled;
     public Image BlinkAbilityImage;
     public TextMeshProUGUI BlinkUnlockText;
+    public GameObject TeleportEffectPrefab;
+    public GameObject AscendedTeleportEffectPrefab;
+
+    PlayerController playerController;
 
     float blinkCooldownLeft;
 
+    public Vector3 LastMovement { get; set; }
+
     private void Awake()
     {
+        playerController = GetComponent<PlayerController>();
+        if (PlayerPrefs.HasKey(PlayerPrefConsts.BONUS))
+        {
+            var bonus = PlayerPrefs.GetInt(PlayerPrefConsts.BONUS, 1);
+            if (bonus > 0)
+            {
+                TeleportEffectPrefab = AscendedTeleportEffectPrefab;
+            }
+        }
     }
 
     private void Update()
     {
+        if (playerController.IsDead) return;
+
         if (BlinkEnabled)
         {
             BlinkAbilityImage.fillAmount = 1 - (blinkCooldownLeft / BlinkCooldown);
@@ -33,6 +50,8 @@ public class PlayerMovementController : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (playerController.IsDead) return;
+
         Move();
         Blink();
     }
@@ -40,12 +59,14 @@ public class PlayerMovementController : MonoBehaviour
     private void Blink()
     {
         if (!BlinkEnabled) return;
-        if (blinkCooldownLeft <= 0 && Input.GetAxis("Jump") == 1)
+        if (blinkCooldownLeft <= 0 && Input.GetButton("Jump"))
         {
+            Instantiate(TeleportEffectPrefab, transform.position, Quaternion.identity);
+
             var xInput = Input.GetAxis("Horizontal");
             var zInput = Input.GetAxis("Vertical");
 
-            var dir = new Vector3(xInput, 0, zInput);
+            var dir = (new Vector3(xInput, 0, zInput)).normalized;
 
             if (dir == Vector3.zero)
             {
@@ -65,6 +86,8 @@ public class PlayerMovementController : MonoBehaviour
         var zInput = Input.GetAxis("Vertical");
 
         var dir = new Vector3(xInput, 0, zInput);
+
+        LastMovement = dir * MovementSpeed;
 
         transform.position += dir * MovementSpeed * Time.deltaTime;
     }

@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: b2818f7c9fa5cf04e8ec31b419b4dd1c
   - enabled: 1
     path: Assets/LD55/Scenes/MenuScene.unity
-    guid: bfb417febdc4b5e41a9797710903a728
+    guid: 73293c07ee9b9b243bf75cef7b33eb12
   - enabled: 1
     path: Assets/LD55/Scenes/GameScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/LD55/Scenes/AboutScene.unity
     guid: 21d1532dc5619ae48b5724689cc0d85c
+  - enabled: 1
+    path: Assets/LD55/Scenes/OptionsScene.unity
+    guid: ccafe25668f644d4b8d036c4c396a501
   m_configObjects: {}

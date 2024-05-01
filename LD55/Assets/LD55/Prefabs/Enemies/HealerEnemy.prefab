@@ -165,17 +165,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6426e103f81e18647a6516d56887e1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 500
+  Health: 130
   Range: 7
   AttackRange: 11
   SkillPower: 1
   Target: {fileID: 0}
   IsBoss: 0
+  ExperienceWorth: 0.095
   DamageTextPrefab: {fileID: 7793018254964113711, guid: 2031caefc3065844c9aa33c7a29685a4,
     type: 3}
   HealTextPrefab: {fileID: 7793018254964113711, guid: 7e74c20d60eac4a4b9cf224914ca285e,
     type: 3}
   HeadoverCanvas: {fileID: 1821062173161497567}
+  DieEffect: {fileID: 2063784995057877817, guid: 62850f23ceeab16479f9f6adcaee477a,
+    type: 3}
 --- !u!54 &4475646999280919157
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -239,6 +242,7 @@ MonoBehaviour:
   MovementSpeed: 2
   DistanceKeeper: 1
   Orbiting: 0
+  Chase: 0
 --- !u!114 &3935543890642603793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,8 +270,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TickTimer: 2.6
-  Range: 10
-  Heal: 20
+  Range: 8
+  Heal: 14
+  AuraGfx: {fileID: 580166214492059179, guid: 5270d12efba8d2d4a83efddba285923f, type: 3}
 --- !u!1001 &6782221217005147850
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -24,7 +24,6 @@ public class BossController : MonoBehaviour
 
     private void Update()
     {
-        print($"{Phases[currentPhase].HealthPercentage / 100f}:{controller.HealthPercentage}");
         if (currentPhase == Phases.Count - 1)
         {
             return;
@@ -36,7 +35,8 @@ public class BossController : MonoBehaviour
             controller.SwapAbilities(Phases[currentPhase].AttacksGained);
             if (Phases[currentPhase].Gfx != null)
             {
-                Instantiate(Phases[currentPhase].Gfx, transform);
+                var effect = Instantiate(Phases[currentPhase].Gfx, transform);
+                effect.transform.position += Vector3.up * 1;
             }
         }
     }

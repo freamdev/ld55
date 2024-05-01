@@ -14,6 +14,7 @@ public class RunePanelUI : MonoBehaviour
 
     public Image Boss;
     public Image BossBackground;
+    public Image BossDead;
 
     private void Start()
     {

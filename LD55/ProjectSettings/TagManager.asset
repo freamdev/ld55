@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LoreLights
+  - LoreModels
+  - ExitHide
+  - ExitModels
+  - OptionsHide
+  - OptionsModels
+  - HighScoreHide
+  - HighScoreModel
+  - PlayModels
+  - PlayHide
   layers:
   - Default
   - TransparentFX

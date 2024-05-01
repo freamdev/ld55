@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: PlayerUltimate
   m_EditorClassIdentifier: 
   Priority: 1
-  Cooldown: 13
-  BasePower: 45
+  Cooldown: 12
+  BasePower: 55
   IsMelee: 0
   projetile: {fileID: 2870946340503591332, guid: 0e41460ad7052cd479b7c656aaaee502,
     type: 3}
   projectileCount: 64
   projectileSpread: 15
-  projectileDelay: 0.01
+  projectileDelay: 0.008

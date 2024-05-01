@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,6 +13,7 @@ public class EnemyAttack : ScriptableObject
     public float Cooldown;
     public float BasePower;
     public bool IsMelee;
+    public bool IsPredicting;
 
     public GameObject projetile;
     public int projectileCount;
@@ -27,8 +29,7 @@ public class EnemyAttack : ScriptableObject
         cooldonwLeft = Cooldown;
         if (IsMelee)
         {
-           // user.GetComponent<Animator>().CrossFade("Attack", 0);
-            user.Target.TakeDamge(BasePower * user.SkillPower); 
+            user.Target.TakeDamge(BasePower * user.SkillPower);
         }
         else
         {
@@ -75,6 +76,8 @@ public class EnemyAttack : ScriptableObject
             yield return new WaitForSeconds(projectileDelay);
             var spread = currentProjectile * projectileSpread;
 
+
+
             var instance = Instantiate(projetile, user.transform.position + Vector3.up, user.transform.rotation);
             instance.transform.Rotate(Vector3.up, spread);
             currentProjectile++;
@@ -82,7 +85,18 @@ public class EnemyAttack : ScriptableObject
             {
                 currentProjectile++;
             }
-            instance.GetComponent<ProjectileBaseController>().Damage = BasePower * user.SkillPower;
+            instance.GetComponent<ProjectileBaseController>().Damage = user.SkillPower * BasePower * user.SkillPower;
+
+            if (IsPredicting)
+            {
+                var targetDirection = user.Target.transform.position - user.transform.position;
+                var timeToReachTarget = targetDirection.magnitude / instance.GetComponent<ProjectileBaseController>().Speed;
+                var futureTargetPosition = user.Target.transform.position + user.Target.GetComponent<PlayerMovementController>().LastMovement * timeToReachTarget;
+                var futureTargetDirection = futureTargetPosition - user.transform.position;
+                var targetRotation = Quaternion.LookRotation(futureTargetDirection);
+                instance.transform.rotation = Quaternion.RotateTowards(instance.transform.rotation, targetRotation, 99999);
+                instance.transform.Rotate(Vector3.up, spread);
+            }
         }
     }
 

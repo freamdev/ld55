@@ -53,15 +53,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 2900
   Range: 6
-  AttackRange: 12
+  AttackRange: 14
   SkillPower: 1.3
   Target: {fileID: 0}
   IsBoss: 1
+  ExperienceWorth: 0.2
   DamageTextPrefab: {fileID: 7793018254964113711, guid: 2031caefc3065844c9aa33c7a29685a4,
     type: 3}
   HealTextPrefab: {fileID: 7793018254964113711, guid: 2031caefc3065844c9aa33c7a29685a4,
     type: 3}
   HeadoverCanvas: {fileID: 2191377087984009904}
+  DieEffect: {fileID: 2063784995057877817, guid: 62850f23ceeab16479f9f6adcaee477a,
+    type: 3}
 --- !u!54 &1484202785524470020
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125,6 +128,7 @@ MonoBehaviour:
   MovementSpeed: 2
   DistanceKeeper: 0
   Orbiting: 0
+  Chase: 0
 --- !u!114 &8232269031288747395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +169,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e4cd7cd262dc84142bfaad6b8640cbba, type: 2}
     - {fileID: 11400000, guid: e4cd7cd262dc84142bfaad6b8640cbba, type: 2}
     - {fileID: 11400000, guid: 4f715f3585eadd049a53ea77a30c1875, type: 2}
-    Gfx: {fileID: 1127758012301247923, guid: 29b117027dfa283478150c6aa194a2a3, type: 3}
+    Gfx: {fileID: 3083726464446560820, guid: da6a811c29e698e4d854e1477664e8e6, type: 3}
 --- !u!1 &5294417915260499522
 GameObject:
   m_ObjectHideFlags: 0

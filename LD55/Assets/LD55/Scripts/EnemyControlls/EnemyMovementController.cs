@@ -10,11 +10,13 @@ public class EnemyMovementController : MonoBehaviour
     public bool DistanceKeeper;
     public bool Orbiting;
 
+    public bool Chase;
+
     EnemyController enemyController;
 
     private void Awake()
     {
-
+        Chase = true;
     }
 
     private void Start()
@@ -25,10 +27,13 @@ public class EnemyMovementController : MonoBehaviour
 
     private void Update()
     {
+        if (!Chase) return;
+
         var dir = enemyController.Target.transform.position - transform.position;
         dir.y = transform.position.y;
         var distance = Vector3.Distance(transform.position, enemyController.Target.transform.position);
         transform.rotation = Quaternion.LookRotation(dir, Vector3.up);
+
 
         if (distance > enemyController.Range)
         {

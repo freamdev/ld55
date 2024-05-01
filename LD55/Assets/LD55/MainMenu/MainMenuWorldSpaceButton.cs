@@ -12,6 +12,11 @@ public class MainMenuWorldSpaceButton : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (SceneToLoad.Contains("GameScene"))
+        {
+            Destroy(FindObjectOfType<AudioSource>().gameObject);
+        }
+
         SceneManager.LoadScene(SceneToLoad);
     }
 }

@@ -16,6 +16,9 @@ public class SummonStateController : MonoBehaviour
     public float EndOffset;
 
     public EnemyController Boss;
+    public GameObject RuneActiveEffect;
+
+    public float SummonSpeed = 3.4f;
 
     public float SummonValuePercentage => CurrentSummonValue / MAX_SUMMON_VALUE;
 
@@ -47,7 +50,7 @@ public class SummonStateController : MonoBehaviour
         {
             lineRenderer.SetPosition(0, transform.position + StartOffset * Vector3.up);
             lineRenderer.SetPosition(1, PlayerController.transform.position + EndOffset * Vector3.up);
-            CurrentSummonValue += Time.deltaTime * 1.6f;
+            CurrentSummonValue += Time.deltaTime * SummonSpeed;
             if (CurrentSummonValue > MAX_SUMMON_VALUE)
             {
                 CurrentSummonValue = MAX_SUMMON_VALUE;
@@ -59,8 +62,10 @@ public class SummonStateController : MonoBehaviour
         if (CurrentSummonValue >= MAX_SUMMON_VALUE && !isCharged)
         {
             isCharged = true;
+            Instantiate(RuneActiveEffect, transform.position, Quaternion.identity);
             summonedBoss = Instantiate(Boss);
             summonedBoss.transform.position = transform.position;
+            summonedBoss.DiedImage = RunePanel.BossDead;
 
             RunePanel.Rune.enabled = false;
             RunePanel.RuneBackground.enabled = false;
