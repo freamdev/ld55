@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db11df5dc4b941e4ba5ecd42dc9c8e32, type: 3}
+  m_Name: Boss_Paladin
+  m_EditorClassIdentifier: 
+  Image: {fileID: 1390755023, guid: 011af2129cfdb4b43a3531cdf5c96153, type: 3}
+  Title: Astrid Warshield
+  Text: <color="yellow">Astrid Warshield</color> is a powerful paladin and guardian
+    of the <color="red">havoc rune</color>. Make sure to stay out of her consecration
+    aura, and you should probably dodge all the holy hammers she throws your way!

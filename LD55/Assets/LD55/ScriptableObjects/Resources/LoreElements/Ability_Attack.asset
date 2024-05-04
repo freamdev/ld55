@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db11df5dc4b941e4ba5ecd42dc9c8e32, type: 3}
+  m_Name: Ability_Attack
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: b89d4679312649748ae495757fd857b2, type: 3}
+  Title: 'Rune: Kenaz'
+  Text: "The rune of Kenaz is the most basic rune spell, perfect for dispatching
+    your enemies. \n\nMalachai, of course, can cast this rune in his sleep, but some
+    extra power from the runes of power can still improve it."

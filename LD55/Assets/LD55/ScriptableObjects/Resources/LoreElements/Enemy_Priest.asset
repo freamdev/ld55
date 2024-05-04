@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db11df5dc4b941e4ba5ecd42dc9c8e32, type: 3}
+  m_Name: Enemy_Priest
+  m_EditorClassIdentifier: 
+  Image: {fileID: -1605969304, guid: b1f5cde1008ecf144b2032d7da08035c, type: 3}
+  Title: Priest
+  Text: Priests are the holy healers in the army of good. Take them out before they
+    heal your enemies to full
